@@ -1,0 +1,4 @@
+﻿  main.c
+C:\Users\Just_Sample\source\repos\ProjectC\ProjectC\main.c(39,39): warning C4013: getNumber: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\Just_Sample\source\repos\ProjectC\ProjectC\main.c(48,43): warning C4013: ParseInt: нет определения; предполагается "extern" с возвратом типа "int"
+  ProjectC.vcxproj -> C:\Users\Just_Sample\source\repos\ProjectC\Debug\ProjectC.exe
