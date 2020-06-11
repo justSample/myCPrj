@@ -76,7 +76,11 @@ int main()
 
         }
 
-        int result = 0;
+        int resultInt = 0;
+        float resultFloat = 0.0f;
+
+        bool isInt = false;
+
 
         switch (mark)
         {
@@ -85,8 +89,10 @@ int main()
 
             if (true) {
 
-                result = (int)(firstNumber * secondNumber);
-                printf("result * = %d", result);
+                resultInt = (int)(firstNumber * secondNumber);
+                isInt = true;
+                printf("result * = %d", resultInt);
+
             }
 
             break;
@@ -94,8 +100,9 @@ int main()
 
             if (true) {
 
-                result = (int)(firstNumber + secondNumber);
-                printf("result + = %d", result);
+                resultInt = (int)(firstNumber + secondNumber);
+                isInt = true;
+                printf("result + = %d", resultInt);
             }
 
             break;
@@ -103,8 +110,9 @@ int main()
 
             if (true) {
 
-                result = (int)(firstNumber - secondNumber);
-                printf("result - = %d", result);
+                resultInt = (int)(firstNumber - secondNumber);
+                isInt = true;
+                printf("result - = %d", resultInt);
             }
 
             break;
@@ -112,8 +120,8 @@ int main()
 
             if (true) {
 
-                result = (int)((float)firstNumber / (float)secondNumber);
-                printf("result / = %f", (float)firstNumber / (float)secondNumber);
+                resultFloat = (float)((float)firstNumber / (float)secondNumber);
+                printf("result / = %.2f", resultFloat);
                 
             }
 
@@ -125,7 +133,13 @@ int main()
 
         char BufferToWrite[256];
 
-        sprintf(BufferToWrite, "%d", result);
+        if (isInt) {
+            sprintf(BufferToWrite, "%d", resultInt);
+        }
+        else 
+        {
+            sprintf(BufferToWrite, "%.2f", resultFloat);
+        }
 
         //Запись в файлик
         fputs(BufferToWrite, fPtr);
